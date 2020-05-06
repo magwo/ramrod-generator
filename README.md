@@ -1,6 +1,6 @@
 # RAMROD generator
 
-For generating english 10-character-words with no repeated characters.
+For generating english 10-character-words with no repeated characters, for example `CERTAINJOB` or `SCAREDMILK`.
 
 ## What is RAMROD?
 
@@ -33,5 +33,7 @@ https://magwo.github.io/ramrod-generator/#master8
 
 
 ## Caveats
+
+The generator will hang if you require a custom word that is not a valid part of a RAMROD word, for example containing mulitple instances of the same letter.
 
 Only works in modern browsers: Chrome, Firefox, Edge, Safari
