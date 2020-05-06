@@ -48,7 +48,7 @@
         return Math.floor(Math.random() * arr.length);
     }
 
-    function getRamrodCombination() {
+    function getRamrodCombination(desiredLength) {
         const firstWordList = Math.random() > 0.5 ? nouns : adjectives;
         const secondWordList = nouns;
 
@@ -56,19 +56,21 @@
 
         while(true) {
             let firstWord = firstWordList[getRandomArrayIndex(firstWordList)];
-            if(firstWord.length === 10 && areAllLettersDistinct(firstWord)) {
+            if(firstWord.length === desiredLength && areAllLettersDistinct(firstWord)) {
                 resultingWord = firstWord;
                 break;
             }
 
             resultingWord = firstWord + secondWordList[getRandomArrayIndex(secondWordList)];
-            if(resultingWord.length === 10 && areAllLettersDistinct(resultingWord)) {
+            if(resultingWord.length === desiredLength && areAllLettersDistinct(resultingWord)) {
                 break;
             }
         }
         return resultingWord;
     }
 
-    document.getElementById("list").innerHTML = [...Array(60).keys()].map(() => getRamrodCombination()).join(" ");
+    const desiredLength = parseInt(document.location.hash.replace("#", "")) || 10;
+
+    document.getElementById("list").innerHTML = [...Array(60).keys()].map(() => getRamrodCombination(desiredLength)).join(" ");
   </script>
 </body>
