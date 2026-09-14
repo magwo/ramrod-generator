@@ -1,5 +1,5 @@
 import { combinedLongWords } from "./combinedwords.js";
-import { nouns, adverbs, adjectives, verbs, mixedWords } from "./words.js";
+import { mixedWords } from "./words.js";
 
 function areAllLettersDistinct(str) {
     for (var j = 0; j < str.length; j++) {
